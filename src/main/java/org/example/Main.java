@@ -34,6 +34,9 @@ public class Main {
             callback.forEach(System.out::println);
         }));
         producer.produce(new DeleteAllCommand(userDao));
+        producer.produce(new PrintAllCommand(userDao, (callback) -> {
+            callback.forEach(System.out::println);
+        }));
 
     }
 }
